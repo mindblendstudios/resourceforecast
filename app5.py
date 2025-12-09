@@ -21,6 +21,36 @@ import plotly.express as px
 # ----------------------------------------------------------
 st.title("📈 Multi-Year Resource Forecasting Tool with Algorithm Choice")
 
+# Inject navy blue background color
+st.markdown(
+    """
+    <style>
+        .stApp {
+            background-color: #66788b;  /* Navy blue */
+        }
+
+        .stSidebar {
+            background-color: #001a35 !important;  /* Slightly darker navy for sidebar */
+        }
+
+        h1, h2, h3, h4, h5, h6, p, label, .stMarkdown, .css-1cpxqw2 {
+            color: white; /* Text color for visibility on navy */
+        }
+
+        .stDownloadButton button, .stButton button {
+            background-color: #0074D9;
+            color: white;
+            border: none;
+        }
+
+        .stDownloadButton button:hover, .stButton button:hover {
+            background-color: #005fa3;
+        }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 st.write("""
 Upload past resource data and generate monthly ML forecasts with:
 - Multiple service lines  
@@ -220,3 +250,4 @@ if uploaded:
             file_name="resource_forecast_ml_choice.xlsx",
             mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
         )
+
